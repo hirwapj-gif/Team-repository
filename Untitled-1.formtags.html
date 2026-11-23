@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Form</title>
+    </head>
+    <body bgcolor="pink"
+        <h1>STUDENT REGISTRATION FORM</h1>
+        <form method="POST">
+         User Name:
+            <input type="text">
+            <br>
+            First name:
+            <input type="text">
+            <br>
+            Last name:
+            <input type="text">
+            <br>
+            <input type="text" maxlenght="30" pattern="[a-zA-Z]">
+            (Max 30 characters a-z A-Z)
+
+            Date of Birth:
+            <input type="date">
+            <br>
+            EMAIL:
+            <input type="email">
+            <br>
+            Mobile Number:
+            <input type="tel" Pattern="[0-9] {10}">(10 digit number)
+            <br>
+            Gender:
+                        <input type="radio" name="gender">Male
+            <input type="radio" name="gender">Female
+            <br>
+            
+Adress:
+<textarea rows="4" cols="50"></textarea>
+<br>
+CITY:
+<input text="text" Pattern="[a-zA-Z]{30}">(Max 30 character A-Z-AZ)
+<br>
+COUNTRY:
+<select name="Country">
+    <option>Choose One</option>
+    <option value="RW">Rwanda</option>
+    <option value="UG">Uganda</option>
+    <option value="BU">BUrundi</option>
+</select>
+<br>
+HObbies:
+<input type="checkbox" name="hobbie">Drawing
+<input type="checkbox" name="hobbie">singing
+<input type="checkbox" name="hobbie">Dancing
+<input type="checkbox" name="hobbie">Sketching
+<br><br>
+Upload your profile:<br>
+<input type="file">
+<br><br>
+Choose color:
+<input type="color">
+<br><br>
+<input type="submit" value="submit">
+<input type="submit" value="clear the form">
+    </form>
+</body>
+</html>
