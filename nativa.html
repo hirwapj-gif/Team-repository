@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NATIVA COMPANY LTD.</title>
+
+    <!-- CSS DESIGN -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f8f4;
+            color: #24372d;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #123e30;
+            color: white;
+            text-align: center;
+            padding: 22px 16px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: #d6bd78;
+        }
+
+        .company-name {
+            margin: 0;
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #d6bd78;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 85px 20px;
+            background: #e7eee5;
+        }
+
+        .eyebrow {
+            color: #48775d;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 60px);
+            line-height: 1.15;
+            margin: 15px 0;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: #174b37;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .shop-button:hover {
+            background: #28674b;
+        }
+
+        .section {
+            max-width: 1050px;
+            margin: auto;
+            padding: 55px 20px;
+        }
+
+        .section h2 {
+            font-size: 30px;
+            margin: 5px 0;
+        }
+
+        .section-intro {
+            color: #65736a;
+            margin-bottom: 25px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 22px;
+            border: 1px solid #e2e7e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px #123e3010;
+        }
+
+        .product-description {
+            color: #69776e;
+        }
+
+        .product-price {
+            font-size: 19px;
+            font-weight: bold;
+            color: #174b37;
+        }
+
+        .product-card button {
+            width: 100%;
+        }
+
+        .order-section {
+            background: #edf1e9;
+            max-width: 100%;
+            padding-left: max(20px, calc((100% - 1010px) / 2));
+            padding-right: max(20px, calc((100% - 1010px) / 2));
+        }
+
+        .cart-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #d5ded4;
+            padding: 12px 0;
+        }
+
+        .cart-row button {
+            cursor: pointer;
+            padding: 7px 12px;
+        }
+
+        #order-form {
+            max-width: 500px;
+            margin-top: 25px;
+            display: grid;
+            gap: 10px;
+        }
+
+        #order-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5ca;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        #order-message {
+            font-weight: bold;
+        }
+
+        .contact-section {
+            text-align: center;
+        }
+
+        footer {
+            background: #123e30;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 500px) {
+            nav {
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 60px 16px;
+            }
+
+            .section h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE HEADER -->
+    <header class="header">
+        <div class="logo">NATIVA<span>.</span></div>
+        <p class="company-name">COMPANY LTD.</p>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#orders">My Order</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section id="home" class="hero">
+            <p class="eyebrow">WELCOME TO NATIVA</p>
+            <h1>Discover something<br>special.</h1>
+            <p>Explore our products and place your order with ease.</p>
+            <a class="shop-button" href="#products">Explore Products</a>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section id="products" class="section">
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Featured Products</h2>
+            <p class="section-intro">
+                Find something you love from NATIVA COMPANY LTD.
+            </p>
+
+            <div id="product-list" class="product-grid"></div>
+        </section>
+
+        <!-- ORDERS -->
+        <section id="orders" class="section order-section">
+            <p class="eyebrow">YOUR SHOPPING</p>
+            <h2>Your Order</h2>
+
+            <div id="cart-items">
+                <p>Your cart is empty. Add a product to get started!</p>
+            </div>
+
+            <h3>Total: <span id="cart-total">RWF 0</span></h3>
+
+            <form id="order-form">
+                <label for="customer-name">Your full name</label>
+                <input id="customer-name" type="text" required
+                       placeholder="Enter your name">
+
+                <label for="customer-phone">Phone number</label>
+                <input id="customer-phone" type="tel" required
+                       placeholder="Enter phone number">
+
+                <label for="customer-address">Delivery location</label>
+                <input id="customer-address" type="text" required
+                       placeholder="Enter delivery location">
+
+                <button type="submit" class="shop-button">
+                    Place Order
+                </button>
+            </form>
+
+            <p id="order-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <p class="eyebrow">GET IN TOUCH</p>
+            <h2>Contact NATIVA</h2>
+            <p>Business: NATIVA COMPANY LTD.</p>
+            <p>Location: Add your business location here.</p>
+            <p>Phone: Add your business phone number here.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NATIVA COMPANY LTD. All rights reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Product One",
+                description: "Discover one of our featured products.",
+                price: 5000
+            },
+            {
+                id: 2,
+                name: "Product Two",
+                description: "Explore another product from NATIVA.",
+                price: 8000
+            },
+            {
+                id: 3,
+                name: "Product Three",
+                description: "Find something special for yourself.",
+                price: 12000
+            }
+        ];
+
+        const cart = [];
+
+        function formatPrice(amount) {
+            return "RWF " + amount.toLocaleString("en-US");
+        }
+
+        // Display products
+        function displayProducts() {
+            const productList = document.getElementById("product-list");
+
+            productList.innerHTML = products.map(product => `
+                <article class="product-card">
+                    <h3>${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                    <p class="product-price">${formatPrice(product.price)}</p>
+                    <button class="shop-button" type="button"
+                        onclick="addToCart(${product.id})">
+                        Add to Order
+                    </button>
+                </article>
+            `).join("");
+        }
+
+        // Add products to cart
+        function addToCart(productId) {
+            const product = products.find(item => item.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({...product, quantity: 1});
+            }
+
+            displayCart();
+        }
+
+        // Remove products from cart
+        function removeFromCart(productId) {
+            const index = cart.findIndex(item => item.id === productId);
+
+            if (index !== -1) {
+                cart.splice(index, 1);
+            }
+
+            displayCart();
+        }
+
+        // Update cart and total
+        function displayCart() {
+            const cartItems = document.getElementById("cart-items");
+            const cartTotal = document.getElementById("cart-total");
+
+            if (cart.length === 0) {
+                cartItems.innerHTML =
+                    "<p>Your cart is empty. Add a product to get started!</p>";
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-row">
+                        <span>
+                            ${item.name} × ${item.quantity}<br>
+                            ${formatPrice(item.price * item.quantity)}
+                        </span>
+                        <button type="button"
+                            onclick="removeFromCart(${item.id})">
+                            Remove
+                        </button>
+                    </div>
+                `).join("");
+            }
+
+            const total = cart.reduce(
+                (sum, item) => sum + item.price * item.quantity,
+                0
+            );
+
+            cartTotal.textContent = formatPrice(total);
+        }
+
+        // Handle the order form
+        document.getElementById("order-form").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                const message = document.getElementById("order-message");
+
+                if (cart.length === 0) {
+                    message.textContent =
+                        "Please add a product to your order first.";
+                    return;
+                }
+
+                const name =
+                    document.getElementById("customer-name").value.trim();
+
+                const phone =
+                    document.getElementById("customer-phone").value.trim();
+
+                const address =
+                    document.getElementById("customer-address").value.trim();
+
+                if (!name || !phone || !address) {
+                    message.textContent =
+                        "Please complete all your details.";
+                    return;
+                }
+
+                message.textContent =
+                    "Thank you, " + name +
+                    "! Your order was checked successfully. " +
+                    "This demonstration does not send orders online.";
+
+                this.reset();
+                cart.length = 0;
+                displayCart();
+            }
+        );
+
+        // Start the website
+        displayProducts();
+        displayCart();
+    </script>
+
+</body>
+</html>
